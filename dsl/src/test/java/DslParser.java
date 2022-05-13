@@ -27,13 +27,14 @@ public class DslParser {
         //将流传递到语法解析器
         HelloParser parser = new HelloParser(tokenStream);
 
-            parser.setBuildParseTree(true);
+        parser.setBuildParseTree(true);
         HelloParser.ProgContext root =parser.prog();
         System.out.println(root.getText());
+        System.out.println("======");
         System.out.println(root.toStringTree());
 
         HelloVisitor visitor = new MathVisitorImp();
-            root.accept(visitor);
+        root.accept(visitor);
     }
 
     public static void main(String[] args) {
