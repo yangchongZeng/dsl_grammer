@@ -55,7 +55,6 @@ public class MathVisitorImp extends HelloBaseVisitor<Integer> {
     }
 
     // 当遇到int节点，直接返回数据
-    
     @Override
     public Integer visitInt(HelloParser.IntContext ctx) {
         return Integer.parseInt(ctx.getText());
