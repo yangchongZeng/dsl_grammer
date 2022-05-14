@@ -15,6 +15,8 @@ expr:
 | ID                            # id
 
 | '(' expr ')'                  # parens
+| 'sin' expr                    # Sin
+| 'cos' expr                    # Cos
 
 ;
 
@@ -23,6 +25,8 @@ DIV : '/' ;
 ADD : '+' ;
 SUB : '-' ;
 MOD : '%' ;
+SIN : 'sin' ;
+COS : 'cos' ;
 ID : [a-zA-Z]+ ;
 INT : [0-9]+ ;
 NEWLINE:'\r'? '\n' ;

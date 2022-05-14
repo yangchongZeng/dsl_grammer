@@ -17,21 +17,14 @@ public class DslParser {
      */
     public static void exec(String expir){
         CharStream input = CharStreams.fromString(expir);
-
         // 将内容传递到词法解析器
         HelloLexer lexer = new HelloLexer(input);
-
         // 传递到流
         CommonTokenStream tokenStream = new CommonTokenStream(lexer);
-
         //将流传递到语法解析器
         HelloParser parser = new HelloParser(tokenStream);
-
         parser.setBuildParseTree(true);
         HelloParser.ProgContext root =parser.prog();
-        System.out.println(root.getText());
-        System.out.println("======");
-        System.out.println(root.toStringTree());
 
         HelloVisitor visitor = new MathVisitorImp();
         root.accept(visitor);
@@ -42,4 +35,5 @@ public class DslParser {
 
         DslParser.exec(str);
     }
+
 }

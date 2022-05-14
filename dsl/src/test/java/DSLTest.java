@@ -1,17 +1,6 @@
-import com.hirain.ads.MathVisitorImp;
-import com.hirain.ads.dsl.HelloLexer;
-import com.hirain.ads.dsl.HelloListener;
-import com.hirain.ads.dsl.HelloParser;
-import com.hirain.ads.dsl.HelloVisitor;
-import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.atn.ATN;
-import org.antlr.v4.runtime.tree.ErrorNode;
-import org.antlr.v4.runtime.tree.TerminalNode;
+
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 public class DSLTest {
 
@@ -25,6 +14,18 @@ public class DSLTest {
     @Test
     public void test2(){
         String str ="1+2*(3+1)\n";
+        DslParser.exec(str);
+    }
+
+    @Test
+    public void test3(){
+        String str ="1+sin(1) \n";
+        DslParser.exec(str);
+    }
+
+    @Test
+    public void test4(){
+        String str ="A = 123 \n 1+(A) \n";
         DslParser.exec(str);
     }
 

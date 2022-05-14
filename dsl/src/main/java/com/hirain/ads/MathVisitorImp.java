@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 public class MathVisitorImp extends HelloBaseVisitor<Integer> {
     // 存储变量的值
-    private Map<String, Integer> variable;
+    private Map<String, Object> variable;
 
     public MathVisitorImp() {
         variable = new HashMap();
@@ -49,6 +49,11 @@ public class MathVisitorImp extends HelloBaseVisitor<Integer> {
         }
     }
 
+    @Override
+    public Integer visitSin(HelloParser.SinContext ctx) {
+        return 102;
+    }
+
     // 当遇到int节点，直接返回数据
     
     @Override
@@ -57,10 +62,10 @@ public class MathVisitorImp extends HelloBaseVisitor<Integer> {
     }
 
     // 当遇到Id节点，从变量表获取值
-    
+    // 变量存储了各种各样的类型啊！
     @Override
     public Integer visitId(HelloParser.IdContext ctx) {
-        return variable.get(ctx.getText());
+        return (Integer) variable.get(ctx.getText());
     }
 
     // 当遇到赋值语句，获取右边expr的值，然后将变量的值保存到variable集合
