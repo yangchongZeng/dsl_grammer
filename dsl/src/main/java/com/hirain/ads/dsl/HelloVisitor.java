@@ -1,4 +1,4 @@
-// Generated from /Users/molly/IdeaProjects/dsl_grammer/dsl/src/main/resources/Hello.g4 by ANTLR 4.10.1
+// Generated from E:/B--Java_Project/github/dsl_grammer/dsl/src/main/resources\Hello.g4 by ANTLR 4.10.1
 package com.hirain.ads.dsl;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -38,6 +38,13 @@ public interface HelloVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitBlank(HelloParser.BlankContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code Xx}
+	 * labeled alternative in {@link HelloParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitXx(HelloParser.XxContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code parens}
 	 * labeled alternative in {@link HelloParser#expr}.
 	 * @param ctx the parse tree
@@ -51,6 +58,13 @@ public interface HelloVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitMod(HelloParser.ModContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code array}
+	 * labeled alternative in {@link HelloParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArray(HelloParser.ArrayContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code MulDiv}
 	 * labeled alternative in {@link HelloParser#expr}.

@@ -6,12 +6,17 @@ import org.antlr.v4.runtime.tree.RuleNode;
 
 import java.util.HashMap;
 import java.util.Map;
+
+
 public class MathVisitorImp extends HelloBaseVisitor<Integer> {
     // 存储变量的值
     private Map<String, Object> variable;
 
+    private Map<String, Object> arrayVariable;
+
     public MathVisitorImp() {
         variable = new HashMap();
+        arrayVariable = new HashMap<>(16);
     }
 
     // 当遇到printExpr节点，计算出exrp的值，然后打印出来
@@ -51,6 +56,8 @@ public class MathVisitorImp extends HelloBaseVisitor<Integer> {
 
     @Override
     public Integer visitSin(HelloParser.SinContext ctx) {
+        Object xx = ctx.expr().accept(this);
+        System.out.println(xx);
         return 102;
     }
 
@@ -60,10 +67,27 @@ public class MathVisitorImp extends HelloBaseVisitor<Integer> {
         return Integer.parseInt(ctx.getText());
     }
 
+    // 当遇到Array节点，
+
+
+    @Override
+    public Integer visitArray(HelloParser.ArrayContext ctx) {
+        System.out.println("visitArray");
+        System.out.println(super.visitArray(ctx));
+        System.out.println(ctx.getText());
+        String arrayText = ctx.getText();
+        if(("").equalsIgnoreCase(arrayText) || arrayText==null){
+            return 0;
+        }
+        return 0;
+    }
+
     // 当遇到Id节点，从变量表获取值
     // 变量存储了各种各样的类型啊！
     @Override
     public Integer visitId(HelloParser.IdContext ctx) {
+        System.out.println("Visit id");
+        System.out.println(ctx.getText());
         return (Integer) variable.get(ctx.getText());
     }
 

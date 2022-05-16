@@ -1,4 +1,4 @@
-// Generated from /Users/molly/IdeaProjects/dsl_grammer/dsl/src/main/resources/Hello.g4 by ANTLR 4.10.1
+// Generated from E:/B--Java_Project/github/dsl_grammer/dsl/src/main/resources\Hello.g4 by ANTLR 4.10.1
 package com.hirain.ads.dsl;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -54,6 +54,18 @@ public interface HelloListener extends ParseTreeListener {
 	 */
 	void exitBlank(HelloParser.BlankContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code Xx}
+	 * labeled alternative in {@link HelloParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterXx(HelloParser.XxContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Xx}
+	 * labeled alternative in {@link HelloParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitXx(HelloParser.XxContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code parens}
 	 * labeled alternative in {@link HelloParser#expr}.
 	 * @param ctx the parse tree
@@ -77,6 +89,18 @@ public interface HelloListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitMod(HelloParser.ModContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code array}
+	 * labeled alternative in {@link HelloParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterArray(HelloParser.ArrayContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code array}
+	 * labeled alternative in {@link HelloParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitArray(HelloParser.ArrayContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code MulDiv}
 	 * labeled alternative in {@link HelloParser#expr}.
