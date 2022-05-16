@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/dsl/dsl.iml" filepath="$PROJECT_DIR$/dsl/dsl.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hirain-dsl/hirain-dsl.iml" filepath="$PROJECT_DIR$/hirain-dsl/hirain-dsl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/dsl_grammer.iml" filepath="$PROJECT_DIR$/.idea/dsl_grammer.iml" />
       <module fileurl="file://$PROJECT_DIR$/testdsl/testdsl.iml" filepath="$PROJECT_DIR$/testdsl/testdsl.iml" />
     </modules>
   </component>
