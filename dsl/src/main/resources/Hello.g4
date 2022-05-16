@@ -14,8 +14,9 @@ expr:
 | <assoc=right> expr '^' expr   # Xx
 | INT                           # int
 | ID                            # id
+| ARRAY                         # array
 | '(' expr ')'                  # parens
-| 'sin' expr                    # Sin
+| 'sin(' expr ')'               # Sin
 | 'cos' expr                    # Cos
 
 ;
@@ -25,6 +26,9 @@ DIV : '/' ;
 ADD : '+' ;
 SUB : '-' ;
 MOD : '%' ;
+
+ARRAY : '[' .*? ']';
+
 SIN : 'sin' ;
 COS : 'cos' ;
 ID : [a-zA-Z]+ ;

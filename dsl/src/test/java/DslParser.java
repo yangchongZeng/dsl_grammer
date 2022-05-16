@@ -1,4 +1,6 @@
+import com.hirain.ads.ArrayVisitorIml;
 import com.hirain.ads.MathVisitorImp;
+import com.hirain.ads.TVisitorIml;
 import com.hirain.ads.dsl.HelloLexer;
 import com.hirain.ads.dsl.HelloParser;
 import com.hirain.ads.dsl.HelloVisitor;
@@ -26,8 +28,11 @@ public class DslParser {
         parser.setBuildParseTree(true);
         HelloParser.ProgContext root =parser.prog();
 
-        HelloVisitor visitor = new MathVisitorImp();
+        // HelloVisitor visitor = new MathVisitorImp();
+        HelloVisitor visitor = new ArrayVisitorIml();
+        // HelloVisitor visitor = new TVisitorIml();
         root.accept(visitor);
+
     }
 
     public static void main(String[] args) {
