@@ -1,0 +1,123 @@
+Index: hirain-dsl/src/main/resources/SignalLexer.g4
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>lexer grammar SignalLexer; //信号词法规则\r\n\r\noptions {\r\n    language=java; //定义语言为JAVA\r\n}\r\n\r\n@header {\r\n    package com.hirain.signal.lexer; //定义生成的代码的package\r\n}\r\n\r\nSV : [a-zA-Z][\\w]+; // 信号变量，以字母开头，可以包含字母、数字、下划线\r\n\r\n/* 以下为支持的操作符 */\r\nMUL : '*' ; // assigns token name to '*' used above in grammar\r\nDIV : '/' ;\r\nADD : '+' ;\r\nSUB : '-' ;\r\nMOD : '%' ;\r\nMORE_THAN : '>';\r\nLESS_THAN : '<';\r\nMT_EQUAL : '>=';\r\nLT_EQUAL : '<=';\r\nEQUAL : '=';\r\nNOT_EQUAL : '!=';\r\nOR_OP : '|';\r\nAND_OP : '&';\r\nOROR_OP : '||';\r\nANDAND_OP : '&&';\r\n\r\n\r\n\r\n/* 以下为支持的数据类型 */\r\nINT : [0]|[-]?[1-9][0-9]*; // 整数\r\nFLOAT : INT [\\.][\\d]+; // 浮点数\r\n\r\n/* 以下为支持的聚合函数（输入多条，返回一条） */\r\nF_SUM : 'sum'; // 求和\r\nF_COUNT : 'count'; // 计数\r\nF_AVG : 'avg'; // 求平均值\r\nF_VAR : 'var'; // 求方差\r\nF_STD : 'std'; // 求标准差\r\nF_MIN : 'min'; // 取最小值\r\nF_MAX : 'max'; // 取最大值\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hirain-dsl/src/main/resources/SignalLexer.g4 b/hirain-dsl/src/main/resources/SignalLexer.g4
+--- a/hirain-dsl/src/main/resources/SignalLexer.g4	(revision b7e5e7c07325840141a3c9440ba958d16bdaec53)
++++ b/hirain-dsl/src/main/resources/SignalLexer.g4	(date 1652673049325)
+@@ -10,7 +10,9 @@
+ 
+ SV : [a-zA-Z][\w]+; // 信号变量，以字母开头，可以包含字母、数字、下划线
+ 
+-/* 以下为支持的操作符 */
++/* 以下为支持的一目操作符 */
++DERI : '\''; // 求导
++/* 以下为支持的二目操作符 */
+ MUL : '*' ; // assigns token name to '*' used above in grammar
+ DIV : '/' ;
+ ADD : '+' ;
+@@ -27,11 +29,14 @@
+ OROR_OP : '||';
+ ANDAND_OP : '&&';
+ 
+-
+-
+ /* 以下为支持的数据类型 */
+ INT : [0]|[-]?[1-9][0-9]*; // 整数
+ FLOAT : INT [\.][\d]+; // 浮点数
++BOOL : 'true' | 'false'; // 布尔值
++
++/* 括号 */
++LEFT_BRACKET : '(';
++RIGHT_BRACKET : ')';
+ 
+ /* 以下为支持的聚合函数（输入多条，返回一条） */
+ F_SUM : 'sum'; // 求和
+@@ -41,3 +46,25 @@
+ F_STD : 'std'; // 求标准差
+ F_MIN : 'min'; // 取最小值
+ F_MAX : 'max'; // 取最大值
++
++/* 以下为支持的计算函数 */
++C_SIN : 'sin'; // sin
++C_COS : 'cos'; // cos
++C_TAN : 'tan'; // tan
++
++NEWLINE
++ : ( {this.atStartOfInput()}?   SPACES
++   | ( '\r'? '\n' | '\r' | '\f' ) SPACES?
++   )
++   {this.onNewLine();}
++ ;
++
++fragment SPACES : [ \t]+;
++
++fragment COMMENT : '#' ~[\r\n\f]*;
++
++fragment LINE_JOINING
++ : '\\' SPACES? ( '\r'? '\n' | '\r' | '\f')
++ ;
++
++SKIP_ : ( SPACES | COMMENT | LINE_JOINING ) -> skip;
+Index: hirain-dsl/src/main/resources/SignalParser.g4
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hirain-dsl/src/main/resources/SignalParser.g4 b/hirain-dsl/src/main/resources/SignalParser.g4
+new file mode 100644
+--- /dev/null	(date 1652678293184)
++++ b/hirain-dsl/src/main/resources/SignalParser.g4	(date 1652678293184)
+@@ -0,0 +1,48 @@
++parser grammar SignalParser;
++
++options {
++    tokenVocab=SignalLexer;
++}
++
++signal_input : stat+;
++
++stat : expr
++    | expr NEWLINE
++    | NEWLINE;
++
++
++expr : param unary_op
++    | param binary_op param
++    | function;
++
++/* 函数： 函数名称 + ( + 表达式 + ) */
++function : function_name LEFT_BRACKET expr RIGHT_BRACKET;
++
++function_name :
++    F_SUM
++    | F_COUNT
++    | F_AVG
++    | F_VAR
++    | F_STD
++    | F_MIN
++    | F_MAX
++    | C_SIN
++    | C_COS
++    | C_TAN
++   ;
++
++unary_op : DERI; // 一目运算符
++
++/* 二目运算符 */
++binary_op : MUL | DIV | ADD | SUB | MOD | MORE_THAN | LESS_THAN
++            | MT_EQUAL | LT_EQUAL | EQUAL | NOT_EQUAL | OR_OP
++            | AND_OP | OROR_OP | ANDAND_OP;
++
++/* 参数（变量或者常量） */
++param : SV
++    | INT
++    | FLOAT
++    | BOOL
++    | LEFT_BRACKET param RIGHT_BRACKET;
++
++/*  */
+\ No newline at end of file
