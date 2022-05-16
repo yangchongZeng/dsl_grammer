@@ -4,11 +4,61 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4164ad71-8d38-49c1-a9bb-e34f814cac0f" name="Default Changelist" comment="生成信号语法解析代码" />
+    <list default="true" id="4164ad71-8d38-49c1-a9bb-e34f814cac0f" name="Default Changelist" comment="yyy">
+      <change afterPath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/SignalVisitorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/express/SignalExpress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hirain-dsl/src/test/java/DSLTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hirain-dsl/src/test/java/DslParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_58.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_58.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_3_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_3_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_29_0_jre.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_29_0_jre.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_taosdata_jdbc_taos_jdbcdriver_2_0_37.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_taosdata_jdbc_taos_jdbcdriver_2_0_37.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr4_runtime_4_10_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr4_runtime_4_10_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr4_runtime_4_7_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr4_runtime_4_9_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_11.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_2_11_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_2_11_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_java_websocket_Java_WebSocket_1_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_java_websocket_Java_WebSocket_1_5_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_20.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_20.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hirain-dsl/hirain-dsl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hirain-dsl/hirain-dsl.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hirain-dsl/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hirain-dsl/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/lexer/SignalLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/lexer/SignalLexer.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/lexer/SignalLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/lexer/SignalLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/lexer/SignalLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/lexer/SignalLexer.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/parser/Signal.interp" beforeDir="false" afterPath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/parser/Signal.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/parser/Signal.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/parser/Signal.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/parser/SignalBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/parser/SignalBaseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/parser/SignalBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/parser/SignalBaseVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/parser/SignalListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/parser/SignalListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/parser/SignalParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/parser/SignalParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/parser/SignalVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/parser/SignalVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hirain-dsl/src/main/resources/Signal.g4" beforeDir="false" afterPath="$PROJECT_DIR$/hirain-dsl/src/main/resources/Signal.g4" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,6 +81,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/hirain-dsl/src/main/java" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -39,11 +90,39 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\dsl_grammer\hirain-dsl\src\test\java" />
       <recent name="D:\projects\dsl_grammer\hirain-dsl\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\projects\dsl_grammer\hirain-dsl\src\main\java\com\hirain\dsl\lexer" />
     </key>
+  </component>
+  <component name="RunManager" selected="JUnit.DSLTest.testTree">
+    <configuration name="DSLTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hirain-dsl" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DSLTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DSLTest.testTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hirain-dsl" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DSLTest" />
+      <option name="METHOD_NAME" value="testTree" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DSLTest.testTree" />
+        <item itemvalue="JUnit.DSLTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -82,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652681017061</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="yyy">
+      <created>1652681450329</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1652681450329</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,6 +186,28 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修改POM文件" />
     <MESSAGE value="生成信号语法解析代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="生成信号语法解析代码" />
+    <MESSAGE value="yyy" />
+    <option name="LAST_COMMIT_MESSAGE" value="yyy" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/hirain-dsl/src/test/java/DslParser.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/hirain-dsl/src/main/java/com/hirain/dsl/SignalVisitorImpl.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.hirain.dsl.parser.SignalParser$AddContext" memberName="parent" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
