@@ -6,53 +6,35 @@ import org.antlr.v4.runtime.Token;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-public class SignalExpress {
+public abstract class SignalExpress {
 
-    private SignalParser.ExprContext exprContext; // 表达式的上下文
+    protected SignalParser.ExprContext exprContext; // 表达式的上下文
 
-    private Token token;
+    protected List<SignalExpress> childExpressList;
 
-    private List<SignalExpress> preExpressList = new ArrayList<>();
-
-    public SignalExpress() {}
-
-    public SignalExpress(SignalParser.ExprContext exprContext, Token token) {
+    public SignalExpress(SignalParser.ExprContext exprContext) {
         this.exprContext = exprContext;
-        this.token = token;
+        this.childExpressList = new ArrayList<>();
     }
 
-    public SignalParser.ExprContext getExprContext() {
-        return exprContext;
+    public void addChildExpress(SignalExpress childExpress) {
+        this.childExpressList.add(childExpress);
     }
 
-    public void setExprContext(SignalParser.ExprContext exprContext) {
-        this.exprContext = exprContext;
+    public List<SignalExpress> getChildExpressList() {
+        return childExpressList;
     }
 
-    public Token getToken() {
-        return token;
-    }
-
-    public void setToken(Token token) {
-        this.token = token;
-    }
-
-    public List<SignalExpress> getPreExpressList() {
-        return preExpressList;
-    }
-
-    public void addPreExpress(SignalExpress signalExpress) {
-        this.preExpressList.add(signalExpress);
-    }
+    public abstract Number calculate(Map<String, Number> paramMap);
 
     @Override
     public String toString() {
         return "SignalExpress{" +
-                "exprContext.class=" + exprContext.getClass().getSimpleName() +
-                ", text=" + exprContext.getText() +
-                ", token=" + token +
-                ", preList=" + preExpressList +
+                "exprContext=" + exprContext.getText() +
+                ", class=" + this.getClass().getSimpleName() +
+                ", childExpressList=" + childExpressList +
                 '}';
     }
 }
